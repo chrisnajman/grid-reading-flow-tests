@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Reading-Flow Tests</title>
+    <meta name="description"
+        content="Demonstration and testing of the experimental CSS reading-flow property, featuring dynamic grid layout variations with accessible keyboard navigation and real-time ARIA live region updates.">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" type="module"></script>
+</head>
+
+<body>
+    <div id="loader" class="loader"><span class="visually-hidden">The page is loading...</span></div>
+    <span class="visually-hidden" aria-live="polite" aria-hidden="true" id="page-loaded"></span>
+    <a href="#main-content" class="element-invisible element-focusable skip-link">Skip to main content</a>
+
+    <div class="theme-toggler">
+        <p class="light">Light<span class="visually-hidden"> theme inactive</span></p><button type="button"
+            aria-pressed="true" aria-label="Toggle theme"><span></span></button>
+        <p class="dark">Dark<span class="visually-hidden"> theme active</span></p>
+    </div>
+
+    <header class="page-header">
+        <div class="title-link">
+            <h1>Grid <code>reading-flow</code> Tests</h1> <a href="#about">About</a>
+        </div>
+        <p><strong>Experimental.</strong> Currently (30/05/2025) only working in Chrome v.137. To check supported
+            browers
+            see <a class="external-link" href="https://caniuse.com/?search=reading-flow" target="_blank"
+                rel="noopener noreferrer">Caniuse</a></p>
+    </header>
+
+    <main id="main-content" class="main-content">
+
+        <div class="forms">
+            <form id="form-grid-variations">
+                <fieldset aria-describedby="grid-variation-desc">
+                    <legend>Choose grid layout</legend>
+
+                    <div class="radios">
+
+                        <label><input type="radio" name="grid-variation" value="grid-0" checked>
+                            <span>0</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-1">
+                            <span>1</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-2">
+                            <span>2</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-3">
+                            <span>3</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-4">
+                            <span>4</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-5">
+                            <span>5</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-6">
+                            <span>6</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-7">
+                            <span>7</span></label>
+
+                        <label><input type="radio" name="grid-variation" value="grid-8">
+                            <span>8</span></label>
+
+                    </div>
+                </fieldset>
+                <p id="grid-variation-desc" class="visually-hidden">
+                    Changes the layout of the grid below, affecting tab order.
+                </p>
+            </form>
+
+            <form id="form">
+                <fieldset aria-describedby="reading-flow-desc">
+                    <legend>Choose <code>reading-flow</code> direction</legend>
+
+                    <div class="radios">
+
+                        <label><input type="radio" name="reading-flow" value="" checked>
+                            <span>None</span></label>
+
+                        <label><input type="radio" name="reading-flow" value="grid-rows">
+                            <span><code>grid-rows</code></span></label>
+
+                        <label><input type="radio" name="reading-flow" value="grid-columns">
+                            <span><code>grid-columns</code></span></label>
+                    </div>
+                </fieldset>
+                <p id="reading-flow-desc" class="visually-hidden">
+                    Changes the reading direction of the grid below, altering keyboard navigation order.
+                </p>
+            </form>
+        </div>
+        <p class="tab-info">Now use the <kbd>Tab</kbd> key to navigate around the grid.</p>
+
+        <p id="aria-announcement" class="visually-hidden" aria-live="polite"></p>
+
+        <div class="grid-wrapper">
+            <header>
+                <h2>Grid <span id="grid-variation-number"></span>,
+                    <code class="reading-flow-type"><span id="reading-flow-type"></span></code>
+                </h2>
+            </header>
+            <div id="grid" class="grid grid-0">
+                <a href="#" class="number-1">
+                    <span>1</span>
+                </a>
+                <a href="#" class="number-2">
+                    <span>2</span>
+                </a>
+                <a href="#" class="number-3">
+                    <span>3</span>
+                </a>
+
+                <a href="#" class="number-4">
+                    <span>4</span>
+                </a>
+                <a href="#" class="number-5">
+                    <span>5</span>
+                </a>
+                <a href="#" class="number-6">
+
+                    <span>6</span>
+                </a>
+                <a href="#" class="number-7">
+                    <span>7</span>
+                </a>
+                <a href="#" class="number-8">
+                    <span>8</span>
+                </a>
+                <a href="#" class="number-9">
+                    <span>9</span>
+                </a>
+            </div>
+            <footer>
+                <p><strong>Suggested option: </strong>
+                    <code><span id="suggested-option"></span></code>
+                </p>
+            </footer>
+        </div>
+
+        <div class="accordion">
+            <details aria-expanded="false">
+                <summary class="element">
+                    <h2 id="about">About</h2>
+                </summary>
+                <div class="summary-content  flow">
+                    <p>The CSS grid layout method has transformed frontend development; however, its flexibility can
+                        pose challenges for some users. It's easy to create situations where the visual order does not
+                        match the source order in the DOM. Since the source order determines how the browser navigates
+                        the page using a keyboard, this can lead to unexpected jumps for users relying on keyboard
+                        navigation.
+                    </p>
+                    <p>The <code>reading-flow</code> property has been introduced in the <a
+                            href="https://www.w3.org/TR/css-display-4/#reading-flow" target="_blank"
+                            rel="noopener noreferrer">CSS Display specification</a> to help address this long-standing
+                        issue.</p>
+                    <p class="note"><strong>Note: </strong>The text above is an edited version of the introduction to <a
+                            href="https://developer.chrome.com/blog/reading-flow" target="_blank"
+                            rel="noopener noreferrer">Use CSS reading-flow for logical sequential
+                            focus navigation</a>
+                        (from the Chrome for Developers Blog).</p>
+                </div>
+            </details>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <a href="https://github.com/chrisnajman/grid-reading-mode-tests" target="_blank" rel="noopener noreferrer"
+            class="external-link">
+            GitHub Repository
+        </a>
+    </footer>
+</body>
+
+</html>
