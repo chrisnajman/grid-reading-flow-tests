@@ -20,7 +20,7 @@ This web page demonstrates and tests the new experimental CSS property `reading-
 - Loading animation
 - Theme switcher.
 
-[View on GitPage](https://chrisnajman.github.io/grid-reading-mode-tests)
+[View on GitPage](https://chrisnajman.github.io/grid-reading-flow-tests)
 
 ## How to Use
 
