@@ -14,7 +14,7 @@
     }
     overflow-y: scroll;
     color-scheme: light dark;
-    --bold: 500;
+    --bold: 600;
     --highlight: orange;
 
     /* light mode (default) */
@@ -125,7 +125,6 @@ a {
     }
 }
 
-.page-header,
 .main-content,
 .page-footer {
     padding-block: 1.5em;
@@ -150,14 +149,18 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding-block-start: 2em;
+    padding-block: 3rem 2.5rem;
     border-width: 0 0 0.0625rem 0;
 
     .title-link {
         display: flex;
+        flex-wrap: wrap;
         gap: clamp(1rem, 0.5981rem + 1.8692vw, 2rem);
+        justify-content: center;
         align-items: center;
+        padding-inline: 1rem;
         margin-inline: auto;
+        line-height: 1;
     }
 
     & p {
@@ -235,6 +238,7 @@ a {
 
     & input[type="radio"] {
         transform: scale(1.25);
+        accent-color: var(--link-blue);
     }
 }
 
