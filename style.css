@@ -369,19 +369,11 @@ a {
         padding: 0.3125rem;
         text-decoration: none;
         background-color: var(--el-bg);
-        color: var(--body-fg);
+        background-color: var(--link-blue);
+        color: var(--body-bg);
         pointer-events: none;
-
-        & span {
-            font-size: 1rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            text-align: center;
-            font-weight: var(--bold);
-            background-color: var(--body-fg);
-            color: var(--body-bg);
-            border-radius: 100vw;
-        }
+        font-size: clamp(1.5rem, 1.2991rem + 0.9346vw, 2rem);
+        font-weight: var(--bold);
 
         &:focus-visible {
             @media (prefers-reduced-motion: no-preference) {
@@ -389,6 +381,7 @@ a {
             }
             background-color: var(--highlight);
             outline: 0;
+            color: black;
         }
     }
 }
