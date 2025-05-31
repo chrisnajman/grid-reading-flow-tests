@@ -383,6 +383,10 @@ a {
             outline: 0;
             color: black;
         }
+
+        & span {
+            text-box: trim-both cap alphabetic;
+        }
     }
 }
 
