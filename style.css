@@ -59,7 +59,8 @@ body {
     /* em NOT rem & margin-top NOT margin bottom */
 }
 
-strong {
+strong,
+b {
     font-weight: var(--bold);
 }
 

@@ -3,7 +3,7 @@
 This web page demonstrates and tests the new experimental CSS property `reading-flow`, which allows developers to define how focus navigation behaves in a grid layout when users press the <kbd>Tab</kbd> key. It addresses accessibility and usability concerns by explicitly setting keyboard reading order to follow either rows or columns in a CSS Grid.
 
 > [!IMPORTANT]
-> Currently (30/05/2025) only available in Chrome v.137. To check supported browsers see [Caniuse](https://caniuse.com/?search=reading-flow).
+> Currently (06/07/2025) working in <b>Chrome v.137, Edge v.137, Chrome for Android v.137 and Android Browser v.137. To check supported browsers see [Caniuse](https://caniuse.com/?search=reading-flow).
 
 ## Features
 
