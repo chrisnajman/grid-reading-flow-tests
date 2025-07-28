@@ -36,7 +36,7 @@ This web page demonstrates and tests the new experimental CSS property `reading-
 ## CSS
 
 > [!NOTE]
-> VSCode currently (30/05/2025) currently flags the classes `.grid-rows` and `.grid-columns` as 'problems'. Please ignore the warnings.
+> VSCode currently (30/05/2025) flags the classes `.grid-rows` and `.grid-columns` as 'problems'. Please ignore the warnings.
 
 The `reading-flow` property and values used to control the grids are:
 
