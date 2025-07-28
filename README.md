@@ -5,6 +5,9 @@ This web page demonstrates and tests the new experimental CSS property `reading-
 > [!IMPORTANT]
 > Currently (06/07/2025) working in <b>Chrome v.137, Edge v.137, Chrome for Android v.137 and Android Browser v.137. To check supported browsers see [Caniuse](https://caniuse.com/?search=reading-flow).
 
+> [!NOTE]
+> If the user's browser does not support `reading-flow`, a "not-supported" message is displayed in the page `header`.
+
 ## Features
 
 - Interactive form to choose from nine distinct grid layout configurations
