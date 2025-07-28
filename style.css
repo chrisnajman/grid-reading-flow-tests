@@ -169,6 +169,17 @@ a {
         max-width: 90%;
         margin-inline: auto;
     }
+
+    & .not-supported {
+        border: 5px solid var(--highlight);
+        padding: 1rem;
+    }
+
+    @supports ((reading-flow: grid-rows) and (reading-flow: grid-columns)) {
+        & .not-supported {
+            display: none;
+        }
+    }
 }
 
 .page-footer {
